@@ -16,11 +16,12 @@
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.RazorAssemblyInfo.cs
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.sourcelink.json
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/Components/Layout/MainLayout.razor.rz.scp.css
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/Components/Layout/NavMenu.razor.rz.scp.css
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/Components/Pages/InvestmentIdeas.razor.rz.scp.css
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/bundle/ScratchPad.styles.css
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/projectbundle/ScratchPad.bundle.scp.css
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0iw4w63g96-9x8ytb54x2.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0iw4w63g96-cb3bgzqht6.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t1y82xdhop-9qx09b7z9l.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/wm8hynp5bm-bqjiyaj88i.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/1k3xb96a72-c2jlpeoesf.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/a49tp07xqe-erw9l3u2r3.gz
@@ -65,8 +66,6 @@
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0mpqs1p841-h1s4sie4z3.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/pnt39bokt4-63fj8s7r0e.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/56ogdgl3ec-0j3bgjxly4.gz
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/6j9e1gbn36-n3gwblojdi.gz
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/v6pbsw1l2k-n3gwblojdi.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/staticwebassets.build.json
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/staticwebassets.development.json
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/staticwebassets.build.endpoints.json
@@ -81,4 +80,7 @@
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.pdb
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.genruntimeconfig.cache
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ref/ScratchPad.dll
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/2ahjdeyz22-t9ss95plwn.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/6j9e1gbn36-iz248irme1.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/v6pbsw1l2k-iz248irme1.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/o5qdwvu2hl-b9ca6b3pf4.gz
