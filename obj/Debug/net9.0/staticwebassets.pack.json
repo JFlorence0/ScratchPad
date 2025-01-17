@@ -5,8 +5,12 @@
       "PackagePath": "staticwebassets/ScratchPad.n3gwblojdi.bundle.scp.css"
     },
     {
-      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/app.css",
-      "PackagePath": "staticwebassets/app.css"
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/ScratchPad.styles.css",
+      "PackagePath": "staticwebassets/css/ScratchPad.styles.css"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/app.css",
+      "PackagePath": "staticwebassets/css/app.css"
     },
     {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/favicon.png",

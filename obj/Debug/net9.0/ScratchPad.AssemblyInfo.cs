@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScratchPad")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+150bdd93971b4f49451d6af051ed2a830a613fa1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScratchPad")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScratchPad")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

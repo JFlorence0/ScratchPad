@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mPJBe8eDC0KOD5iM2Nllc4ie4kdXh6NZUCM6hlmWljA=",
+  "Hash": "vlkDU3H0GmFenlX87/5uwUob+0ifb8NYhLVxMAtOXEE=",
   "Source": "ScratchPad",
   "BasePath": "_content/ScratchPad",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0iw4w63g96-9x8ytb54x2.gz",
+      "SourceId": "ScratchPad",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/ScratchPad",
+      "RelativePath": "css/app#[.{fingerprint=9x8ytb54x2}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/app.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "jrefvuyyzt",
+      "Integrity": "gbA/JNHhpuXA+XF41mWCEobuUUmDfius9LLrgZvKtF4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/app.css"
+    },
     {
       "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0mpqs1p841-h1s4sie4z3.gz",
       "SourceId": "ScratchPad",
@@ -437,27 +458,6 @@
       "OriginalItemSpec": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map"
     },
     {
-      "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/h81b4lt33a-khy4lop6wu.gz",
-      "SourceId": "ScratchPad",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/",
-      "BasePath": "_content/ScratchPad",
-      "RelativePath": "app#[.{fingerprint=khy4lop6wu}]?.css.gz",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/app.css",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "Fingerprint": "zfd1r812tx",
-      "Integrity": "sVqJu2q90LLmT7BmsbLu4VRQ5J/XF0EAIfd5QfY4EbU=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/app.css"
-    },
-    {
       "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/hvdafl99jm-06098lyss8.gz",
       "SourceId": "ScratchPad",
       "SourceType": "Discovered",
@@ -624,6 +624,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz",
+      "SourceId": "ScratchPad",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/",
+      "BasePath": "_content/ScratchPad",
+      "RelativePath": "css/ScratchPad.styles#[.{fingerprint=n3gwblojdi}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/ScratchPad.styles.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "8i1ca65kl1",
+      "Integrity": "oASKPC9UCe4eT/Xj+T0un2yhkNbnuvN/OrU7BHzHZV4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/ScratchPad.styles.css"
     },
     {
       "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/mlbumad8d4-ub07r2b239.gz",
@@ -1046,12 +1067,12 @@
       "OriginalItemSpec": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/projectbundle/ScratchPad.bundle.scp.css"
     },
     {
-      "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/app.css",
+      "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/app.css",
       "SourceId": "ScratchPad",
       "SourceType": "Discovered",
       "ContentRoot": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/",
       "BasePath": "_content/ScratchPad",
-      "RelativePath": "app#[.{fingerprint}]?.css",
+      "RelativePath": "css/app#[.{fingerprint}]?.css",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1060,11 +1081,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "khy4lop6wu",
-      "Integrity": "aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=",
+      "Fingerprint": "9x8ytb54x2",
+      "Integrity": "UwWusPqvVXWdCj3FgYcrFLmDNd16AG+EIw9y1BZaqC4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/app.css"
+      "OriginalItemSpec": "wwwroot/css/app.css"
+    },
+    {
+      "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/ScratchPad.styles.css",
+      "SourceId": "ScratchPad",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/",
+      "BasePath": "_content/ScratchPad",
+      "RelativePath": "css/ScratchPad.styles#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "n3gwblojdi",
+      "Integrity": "fUfCe9QfnvrIwaK7EbSs919OG8CdQsIg3D0uDmFHXSc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/css/ScratchPad.styles.css"
     },
     {
       "Identity": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/favicon.png",
@@ -2014,13 +2056,13 @@
   ],
   "Endpoints": [
     {
-      "Route": "app.css",
-      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/h81b4lt33a-khy4lop6wu.gz",
+      "Route": "css/app.9x8ytb54x2.css",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0iw4w63g96-9x8ytb54x2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000636132316"
+          "Quality": "0.000628535512"
         }
       ],
       "ResponseHeaders": [
@@ -2030,19 +2072,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "1590"
         },
         {
           "Name": "ETag",
-          "Value": "\"sVqJu2q90LLmT7BmsbLu4VRQ5J/XF0EAIfd5QfY4EbU=\""
+          "Value": "\"gbA/JNHhpuXA+XF41mWCEobuUUmDfius9LLrgZvKtF4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 15:24:03 GMT"
+          "Value": "Fri, 17 Jan 2025 17:19:25 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -2058,19 +2100,27 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "W/\"UwWusPqvVXWdCj3FgYcrFLmDNd16AG+EIw9y1BZaqC4=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "9x8ytb54x2"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-UwWusPqvVXWdCj3FgYcrFLmDNd16AG+EIw9y1BZaqC4="
         }
       ]
     },
     {
-      "Route": "app.css",
-      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/app.css",
+      "Route": "css/app.9x8ytb54x2.css",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/app.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2079,7 +2129,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2900"
+          "Value": "2939"
         },
         {
           "Name": "Content-Type",
@@ -2087,27 +2137,35 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "\"UwWusPqvVXWdCj3FgYcrFLmDNd16AG+EIw9y1BZaqC4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 15:24:03 GMT"
+          "Value": "Fri, 17 Jan 2025 17:19:25 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "9x8ytb54x2"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-UwWusPqvVXWdCj3FgYcrFLmDNd16AG+EIw9y1BZaqC4="
         }
       ]
     },
     {
-      "Route": "app.css.gz",
-      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/h81b4lt33a-khy4lop6wu.gz",
+      "Route": "css/app.9x8ytb54x2.css.gz",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0iw4w63g96-9x8ytb54x2.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2116,7 +2174,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "1590"
         },
         {
           "Name": "Content-Type",
@@ -2124,15 +2182,15 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"sVqJu2q90LLmT7BmsbLu4VRQ5J/XF0EAIfd5QfY4EbU=\""
+          "Value": "\"gbA/JNHhpuXA+XF41mWCEobuUUmDfius9LLrgZvKtF4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 15:24:03 GMT"
+          "Value": "Fri, 17 Jan 2025 17:19:25 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -2145,19 +2203,27 @@
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "9x8ytb54x2"
+        },
+        {
+          "Name": "label",
+          "Value": "css/app.css.gz"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-sVqJu2q90LLmT7BmsbLu4VRQ5J/XF0EAIfd5QfY4EbU="
+          "Value": "sha256-gbA/JNHhpuXA+XF41mWCEobuUUmDfius9LLrgZvKtF4="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css",
-      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/h81b4lt33a-khy4lop6wu.gz",
+      "Route": "css/app.css",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0iw4w63g96-9x8ytb54x2.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000636132316"
+          "Quality": "0.000628535512"
         }
       ],
       "ResponseHeaders": [
@@ -2167,15 +2233,289 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "1590"
         },
         {
           "Name": "ETag",
-          "Value": "\"sVqJu2q90LLmT7BmsbLu4VRQ5J/XF0EAIfd5QfY4EbU=\""
+          "Value": "\"gbA/JNHhpuXA+XF41mWCEobuUUmDfius9LLrgZvKtF4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 15:24:03 GMT"
+          "Value": "Fri, 17 Jan 2025 17:19:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"UwWusPqvVXWdCj3FgYcrFLmDNd16AG+EIw9y1BZaqC4=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UwWusPqvVXWdCj3FgYcrFLmDNd16AG+EIw9y1BZaqC4="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2939"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UwWusPqvVXWdCj3FgYcrFLmDNd16AG+EIw9y1BZaqC4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 17:19:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-UwWusPqvVXWdCj3FgYcrFLmDNd16AG+EIw9y1BZaqC4="
+        }
+      ]
+    },
+    {
+      "Route": "css/app.css.gz",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0iw4w63g96-9x8ytb54x2.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1590"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gbA/JNHhpuXA+XF41mWCEobuUUmDfius9LLrgZvKtF4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 17:19:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gbA/JNHhpuXA+XF41mWCEobuUUmDfius9LLrgZvKtF4="
+        }
+      ]
+    },
+    {
+      "Route": "css/ScratchPad.styles.css",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000559284116"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1787"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oASKPC9UCe4eT/Xj+T0un2yhkNbnuvN/OrU7BHzHZV4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 17:32:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fUfCe9QfnvrIwaK7EbSs919OG8CdQsIg3D0uDmFHXSc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fUfCe9QfnvrIwaK7EbSs919OG8CdQsIg3D0uDmFHXSc="
+        }
+      ]
+    },
+    {
+      "Route": "css/ScratchPad.styles.css",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/ScratchPad.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5838"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fUfCe9QfnvrIwaK7EbSs919OG8CdQsIg3D0uDmFHXSc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 17:32:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fUfCe9QfnvrIwaK7EbSs919OG8CdQsIg3D0uDmFHXSc="
+        }
+      ]
+    },
+    {
+      "Route": "css/ScratchPad.styles.css.gz",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1787"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oASKPC9UCe4eT/Xj+T0un2yhkNbnuvN/OrU7BHzHZV4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 17:32:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-oASKPC9UCe4eT/Xj+T0un2yhkNbnuvN/OrU7BHzHZV4="
+        }
+      ]
+    },
+    {
+      "Route": "css/ScratchPad.styles.n3gwblojdi.css",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000559284116"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1787"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"oASKPC9UCe4eT/Xj+T0un2yhkNbnuvN/OrU7BHzHZV4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 17 Jan 2025 17:32:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2195,27 +2535,27 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "W/\"fUfCe9QfnvrIwaK7EbSs919OG8CdQsIg3D0uDmFHXSc=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "n3gwblojdi"
         },
         {
           "Name": "label",
-          "Value": "app.css"
+          "Value": "css/ScratchPad.styles.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-fUfCe9QfnvrIwaK7EbSs919OG8CdQsIg3D0uDmFHXSc="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css",
-      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/app.css",
+      "Route": "css/ScratchPad.styles.n3gwblojdi.css",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/ScratchPad.styles.css",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2224,7 +2564,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2900"
+          "Value": "5838"
         },
         {
           "Name": "Content-Type",
@@ -2232,11 +2572,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs=\""
+          "Value": "\"fUfCe9QfnvrIwaK7EbSs919OG8CdQsIg3D0uDmFHXSc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 15:24:03 GMT"
+          "Value": "Fri, 17 Jan 2025 17:32:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2246,21 +2586,21 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "n3gwblojdi"
         },
         {
           "Name": "label",
-          "Value": "app.css"
+          "Value": "css/ScratchPad.styles.css"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-aNPcLFwdCCGS2v1guSR64Htd4Ly5uclT7taAptnMPbs="
+          "Value": "sha256-fUfCe9QfnvrIwaK7EbSs919OG8CdQsIg3D0uDmFHXSc="
         }
       ]
     },
     {
-      "Route": "app.khy4lop6wu.css.gz",
-      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/h81b4lt33a-khy4lop6wu.gz",
+      "Route": "css/ScratchPad.styles.n3gwblojdi.css.gz",
+      "AssetFile": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -2269,7 +2609,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1571"
+          "Value": "1787"
         },
         {
           "Name": "Content-Type",
@@ -2277,11 +2617,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"sVqJu2q90LLmT7BmsbLu4VRQ5J/XF0EAIfd5QfY4EbU=\""
+          "Value": "\"oASKPC9UCe4eT/Xj+T0un2yhkNbnuvN/OrU7BHzHZV4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 15:24:03 GMT"
+          "Value": "Fri, 17 Jan 2025 17:32:38 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2299,15 +2639,15 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "khy4lop6wu"
+          "Value": "n3gwblojdi"
         },
         {
           "Name": "label",
-          "Value": "app.css.gz"
+          "Value": "css/ScratchPad.styles.css.gz"
         },
         {
           "Name": "integrity",
-          "Value": "sha256-sVqJu2q90LLmT7BmsbLu4VRQ5J/XF0EAIfd5QfY4EbU="
+          "Value": "sha256-oASKPC9UCe4eT/Xj+T0un2yhkNbnuvN/OrU7BHzHZV4="
         }
       ]
     },
@@ -15530,7 +15870,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15583,7 +15923,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15620,7 +15960,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15667,7 +16007,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15728,7 +16068,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15773,7 +16113,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15828,7 +16168,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15889,7 +16229,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15934,7 +16274,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -15989,7 +16329,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16042,7 +16382,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -16079,7 +16419,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 17 Jan 2025 16:35:47 GMT"
+          "Value": "Fri, 17 Jan 2025 17:20:48 GMT"
         },
         {
           "Name": "Cache-Control",
