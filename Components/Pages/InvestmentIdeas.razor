@@ -1,0 +1,45 @@
+@page "/investment-ideas"
+
+<PageTitle>Investment Ideas</PageTitle>
+
+<div>
+    <h1>Investment Ideas</h1>
+    <p>
+        Here are some investment ideas & themes I think will make great investments over the next 10 years.
+    </p>
+
+    <!-- Input Form -->
+    <h3>Add a New Investment Theme</h3>
+    <label>Theme Name:</label>
+    <input type="text" @bind="themeName" placeholder="Enter theme name" />
+    <br /><br />
+    <label>Why this theme works:</label>
+    <textarea @bind="themeDescription" placeholder="Enter description"></textarea>
+    <br /><br />
+    <button @onclick="AddTheme">Add Theme</button>
+
+    <!-- Display Input -->
+    <h3>@displayedThemeName</h3>
+    <p>@displayedThemeDescription</p>
+</div>
+
+@code {
+    private string themeName = string.Empty;
+    private string themeDescription = string.Empty;
+
+    private string displayedThemeName = "Electric Vehicles";
+    private string displayedThemeDescription = "Electric vehicles are the future of transportation. They are more efficient, cheaper to maintain, and better for the environment. Companies like Tesla, Nio, and Rivian are leading the charge in this space.";
+
+    private void AddTheme()
+    {
+        if (!string.IsNullOrWhiteSpace(themeName) && !string.IsNullOrWhiteSpace(themeDescription))
+        {
+            displayedThemeName = themeName;
+            displayedThemeDescription = themeDescription;
+
+            // Clear inputs
+            themeName = string.Empty;
+            themeDescription = string.Empty;
+        }
+    }
+}
