@@ -59,6 +59,15 @@
                             <span class="nav-link-text" aria-hidden="true">To Study</span>
                         </div>
                     </NavLink>
+                    
+                    <NavLink class="nav-link" href="mobylmenu">
+                        <div class="nav-link-icon-container @IsCollapsed">
+                            <img src="images/book-icon.png" alt="Book Icon" class="nav-link-icon" />
+                        </div>
+                        <div class="nav-link-text-container @IsCollapsed">
+                            <span class="nav-link-text" aria-hidden="true">MobylMenu</span>
+                        </div>
+                    </NavLink>
                 </nav>
             </div>
             <div class="navbar-toggler-icon-container" @onclick="UIState.ToggleSidebar">
@@ -89,10 +98,13 @@
 </div>
 
 @code {
-    // We're defining a variable that is based on the UIState.IsSidebarCollapsed
+    // Variable that is based on the UIState.IsSidebarCollapsed
     // variable in UIState. If true, "collapsed" will be the class applied to the container,
     // and we'll apply styles to reflect the navbar as collapsed. Otherwise, "expanded" is applied.
     private string IsCollapsed => UIState.IsSidebarCollapsed ? "collapsed" : "expanded";
+
+    // Variable that will be updated with the user's last selection, we will base the styling on it.
+    private string lastSelected => UIState.NavLinkSelection;
 
     // This runs when the page is initialized. It's similar to a useEffect hook
     // with an empty dependency array in React. Inside, we are adding an event listener
@@ -100,11 +112,17 @@
     protected override void OnInitialized()
     {
         UIState.SidebarStateChanged += OnSidebarStateChanged;
+        UIState.NavLinkSelectionChanged += OnNavLinkSelectionChanged;
     }
 
     // This runs when the sidebar state changes, triggering a re-render of the component.
     // InvokeAsync ensures StateHasChanged is run on the correct thread for Blazor updates.
     private void OnSidebarStateChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    private void OnNavLinkSelectionChanged()
     {
         InvokeAsync(StateHasChanged);
     }
@@ -115,6 +133,7 @@
     public void Dispose()
     {
         UIState.SidebarStateChanged -= OnSidebarStateChanged;
+        UIState.NavLinkSelectionChanged -= OnNavLinkSelectionChanged;
     }
 }
 

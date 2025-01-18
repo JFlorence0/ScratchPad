@@ -28,10 +28,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/jimmyfl0/Desktop/Dev/C\#/ScratchPad/Components/Layout/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/jimmyfl0/Desktop/Dev/C\#/ScratchPad/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Db3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/jimmyfl0/Desktop/Dev/C\#/ScratchPad/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/jimmyfl0/Desktop/Dev/C\#/ScratchPad/Components/Pages/MobylMenuAnalytics.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Nb2J5bE1lbnVBbmFseXRpY3MucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/jimmyfl0/Desktop/Dev/C\#/ScratchPad/Components/Pages/ToBuild.razor]

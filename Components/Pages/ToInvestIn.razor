@@ -7,20 +7,21 @@
     <p class="page-subtitle">
         Investment ideas & themes I'll be too early or too late for.
     </p>
+    <div class="page-body">
+        <!-- Input Form -->
+        <h3>Add a New Investment Theme</h3>
+        <label>Theme Name:</label>
+        <input type="text" @bind="themeName" placeholder="Enter theme name" />
+        <br /><br />
+        <label>Why this theme works:</label>
+        <textarea @bind="themeDescription" placeholder="Enter description"></textarea>
+        <br /><br />
+        <button @onclick="AddTheme">Add Theme</button>
 
-    <!-- Input Form -->
-    <h3>Add a New Investment Theme</h3>
-    <label>Theme Name:</label>
-    <input type="text" @bind="themeName" placeholder="Enter theme name" />
-    <br /><br />
-    <label>Why this theme works:</label>
-    <textarea @bind="themeDescription" placeholder="Enter description"></textarea>
-    <br /><br />
-    <button @onclick="AddTheme">Add Theme</button>
-
-    <!-- Display Input -->
-    <h3>@displayedThemeName</h3>
-    <p>@displayedThemeDescription</p>
+        <!-- Display Input -->
+        <h3>@displayedThemeName</h3>
+        <p>@displayedThemeDescription</p>
+    </div>
 </div>
 
 @code {

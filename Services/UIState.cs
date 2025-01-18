@@ -22,6 +22,18 @@ namespace ScratchPad.Services
             SidebarStateChanged?.Invoke();
         }
 
+        // This will track the last nav link selection of the user
+        public string NavLinkSelection { get; set; } = string.Empty;
+
+        /* Event for notifying subscribers about nav link selection state changes */
+        public event Action? NavLinkSelectionChanged;
+
+        public void SetNavLinkSelection(string selection)
+        {
+            NavLinkSelection = selection;
+            NavLinkSelectionChanged?.Invoke();
+        }
+
         // Initial state of dark mode, default is false (light mode)
         public bool IsDarkModeEnabled { get; private set; } = false;
 

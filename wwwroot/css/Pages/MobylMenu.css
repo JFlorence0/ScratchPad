@@ -1,0 +1,29 @@
+.mm-active-users-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+}
+
+.mm-active-user-metric-container {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    align-items: center;
+    border: 2px solid var(--white);
+    border-radius: 20px;
+    padding: 1.5rem;
+    margin: 0 20px 20px 0;
+}
+
+.mm-active-user-metric-title {
+    font-size: 1.2rem;
+}
+
+.mm-active-user-metric-count {
+    margin-top: 5px;
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--custom-green);
+}

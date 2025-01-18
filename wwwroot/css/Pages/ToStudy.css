@@ -1,0 +1,41 @@
+.ts-courses-container-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px solid blue;
+}
+
+.ts-course-container {
+    border: 1px solid red;
+    margin-top: 20px;
+    width: 350px;
+}
+
+.ts-course-title {
+    font-weight: 500;
+}
+
+.ts-course-subtitle {
+    font-weight: 400;
+    color: var(--grey);
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.ts-action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--custom-green);
+    color: white;
+    font-size: 0.75rem;
+    width: 4.25rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+
+.ts-action-button:hover {
+    background-color: rgb(36, 149, 36);
+}

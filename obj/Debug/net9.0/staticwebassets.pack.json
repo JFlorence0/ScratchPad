@@ -9,6 +9,22 @@
       "PackagePath": "staticwebassets/css/Layout/NavMenu.css"
     },
     {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Pages/Home.css",
+      "PackagePath": "staticwebassets/css/Pages/Home.css"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Pages/MobylMenu.css",
+      "PackagePath": "staticwebassets/css/Pages/MobylMenu.css"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Pages/ToDo.css",
+      "PackagePath": "staticwebassets/css/Pages/ToDo.css"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Pages/ToStudy.css",
+      "PackagePath": "staticwebassets/css/Pages/ToStudy.css"
+    },
+    {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/ScratchPad.styles.css",
       "PackagePath": "staticwebassets/css/ScratchPad.styles.css"
     },

@@ -14,8 +14,8 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 220px; /* Default width */
-    height: 100vh;
     transition: width 0.3s ease;
+    height: 100vh;
 }
 
 .navbar-brand {
@@ -38,7 +38,8 @@ body {
     flex-direction: column;
     align-items: center;
     height: 100%;
-    width: 200px;
+    width: 200px; /* Default content width */
+    transition: width 0.3s ease;
     border-right: 1px solid var(--white);
     margin-right: 5px;
 }
@@ -115,14 +116,26 @@ body {
 
 /* Main content adjusts to sidebar state site wide */
 main {
-    margin-left: 230px;
+    margin-left: 230px; /* allow room for navlink & toggle button */
     transition: margin-left 0.3s ease;
     padding-left: 10px;
     padding-top: 50px;
+    width: 100%;
 }
 
 main.collapsed {
     margin-left: 80px;
+    transition: margin-left 0.3s ease;
+}
+
+.page-body {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.page-body-title {
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 @media (max-width: 640.98px) {
