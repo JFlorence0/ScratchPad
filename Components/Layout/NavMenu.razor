@@ -1,79 +1,25 @@
-﻿@inject ScratchPad.Services.UIState UIState;
-
-<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">ScratchPad</a>
+﻿<nav class="nav flex-column">
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+            <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+        </NavLink>
     </div>
-</div>
 
-<input type="checkbox" title="Navigation menu" class="navbar-toggler" />
-
-<!-- Container that will hold the navbar toggle button.
-Use NavBarContainerClass toggle apply the correct class based on the 
-state of UIState.IsSidebarCollapsed-->
-<div class="navbar-toggler-container @NavBarContainerClass">
-    <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-        <nav class="nav flex-column">
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                    <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-                </NavLink>
-            </div>
-
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="counter">
-                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-                </NavLink>
-            </div>
-
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="investment-ideas">
-                    <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Investment Ideas
-                </NavLink>
-            </div>
-
-            <div class="nav-item px-3">
-                <NavLink class="nav-link" href="weather">
-                    <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-                </NavLink>
-            </div>
-        </nav>
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="counter">
+            <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
+        </NavLink>
     </div>
-    <div class="navbar-toggler-icon-container" @onclick="UIState.ToggleSidebar">
-        @if (UIState.IsSidebarCollapsed)
-        {
-            <span class="bi bi-plus" aria-hidden="true"></span>
-        }
-        else
-        {
-            <span class="bi bi-dash" aria-hidden="true"></span>
-        }
+
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="investment-ideas">
+            <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Investment Ideas
+        </NavLink>
     </div>
-</div>
 
-@code {
-    <!-- we're defining a variable that is based on the UIState.IsSidebarCollasped
-    variable in UIState, if true, collapsed will be the class applied to the container 
-    holding the variable, and we'll apply styles to reflect the nabber as collapsed -->
-    private string NavBarContainerClass => UIState.IsSidebarCollapsed ? "collapsed" : "expanded";
-
-    <!-- This runs when the page is initialized,similar to a useEffect hook with and empty
-    dependency array in React. inside, we are adding an event listener -->
-    protected override void OnInitialized()
-    {
-        UIState.SidebarStateChanged += OnSidebarStateChanged;
-    }
-
-    // This runs when the sidebar state changes, triggering a re-render
-    private void OnSidebarStateChanged()
-    {
-        InvokeAsync(StateHasChanged);
-    }
-
-    <!-- This runs when the page unmounts,similar to a cleanup function in React.
-    Here we aria-hidden unsubscribing, or removing an event listener-->
-    public void Dispose()
-    {
-        UIState.SidebarStateChanged -= OnSidebarStateChanged;
-    }
-}
+    <div class="nav-item px-3">
+        <NavLink class="nav-link" href="weather">
+            <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
+        </NavLink>
+    </div>
+</nav>

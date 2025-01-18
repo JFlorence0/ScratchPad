@@ -1,10 +1,3 @@
-.navbar-toggler-container {
-    border: 5px solid red;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .navbar-toggler {
     appearance: none;
     cursor: pointer;
@@ -86,14 +79,6 @@
 .nav-item ::deep .nav-link:hover {
     background-color: rgba(255,255,255,0.1);
     color: white;
-}
-
-.nav-scrollable {
-    display: none;
-}
-
-.navbar-toggler:checked ~ .nav-scrollable {
-    display: block;
 }
 
 @media (min-width: 641px) {

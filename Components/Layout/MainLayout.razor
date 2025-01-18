@@ -1,11 +1,29 @@
 ﻿@inherits LayoutComponentBase
+@inject ScratchPad.Services.UIState UIState
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
+    <!-- Sidebar with toggle logic -->
+    <div class="sidebar @SidebarClass">
+        <div class="navbar-toggler-container @NavBarContainerClass">
+            <div class="nav-scrollable">
+                <a class="navbar-brand" href="">ScratchPad</a>
+                <NavMenu />
+            </div>
+            <div class="navbar-toggler-icon-container" @onclick="UIState.ToggleSidebar">
+                @if (UIState.IsSidebarCollapsed)
+                {
+                    <span class="nm-nav-toggle-btn" aria-hidden="true">+</span>
+                }
+                else
+                {
+                    <span class="nm-nav-toggle-btn" aria-hidden="true">-</span>
+                }
+            </div>
+        </div>
     </div>
 
-    <main>
+    <!-- Main content area -->
+    <main class="@MainClass">
         <article class="content px-4">
             @Body
         </article>
@@ -17,3 +35,36 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+
+@code {
+    // We're defining a variable that is based on the UIState.IsSidebarCollapsed
+    // variable in UIState. If true, "collapsed" will be the class applied to the container,
+    // and we'll apply styles to reflect the navbar as collapsed. Otherwise, "expanded" is applied.
+    private string NavBarContainerClass => UIState.IsSidebarCollapsed ? "collapsed" : "expanded";
+    private string MainClass => UIState.IsSidebarCollapsed ? "collapsed" : "expanded";
+    private string SidebarClass => UIState.IsSidebarCollapsed ? "collapsed" : "expanded";
+
+    // This runs when the page is initialized. It's similar to a useEffect hook
+    // with an empty dependency array in React. Inside, we are adding an event listener
+    // that listens for sidebar state changes.
+    protected override void OnInitialized()
+    {
+        UIState.SidebarStateChanged += OnSidebarStateChanged;
+    }
+
+    // This runs when the sidebar state changes, triggering a re-render of the component.
+    // InvokeAsync ensures StateHasChanged is run on the correct thread for Blazor updates.
+    private void OnSidebarStateChanged()
+    {
+        InvokeAsync(StateHasChanged);
+    }
+
+    // This runs when the page unmounts. It's similar to a cleanup function in React.
+    // Here, we are unsubscribing (removing the event listener) to prevent memory leaks
+    // or unintended behavior when the component is no longer in use.
+    public void Dispose()
+    {
+        UIState.SidebarStateChanged -= OnSidebarStateChanged;
+    }
+}
+

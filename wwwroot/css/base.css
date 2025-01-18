@@ -1,3 +1,31 @@
+:root {
+    --background-color: #292c2f;
+    --custom-green: rgb(28, 139, 28);
+    --white: rgb(255, 255, 255);
+
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--white);
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: var(--white);
+}
+
 .page-title {
     font-size: 1.3rem;
     font-weight: bold;

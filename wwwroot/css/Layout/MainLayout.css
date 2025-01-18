@@ -4,37 +4,50 @@
     flex-direction: column;
 }
 
-main {
-    flex: 1;
-}
-
-.sidebar {
-    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
-}
-
-.top-row {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
-    display: flex;
+.navbar-toggler-container {
+    position: fixed;
+    border: 5px solid red;
+    display: inline-flex;
     align-items: center;
+    justify-content: space-between;
+    width: 280px; /* Default width */
+    height: 100vh;
+    transition: width 0.3s ease; /* Smooth animation */
 }
 
-    .top-row ::deep a, .top-row ::deep .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
+.navbar-toggler-container.collapsed {
+    width: 70px;
+}
 
-    .top-row ::deep a:hover, .top-row ::deep .btn-link:hover {
-        text-decoration: underline;
-    }
+.navbar-toggler-container.expanded {
+    width: 280px;
+}
 
-    .top-row ::deep a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+.nav-scrollable {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 250px;
+    border: 1px solid blue;
+}
+
+.nm-nav-toggle-btn {
+    font-size: 2rem;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Main content adjusts to sidebar state */
+main {
+    margin-left: 290px; /* Matches expanded sidebar width */
+    transition: margin-left 0.3s ease;
+    border: 1px solid green;
+}
+
+main.collapsed {
+    margin-left: 80px; /* Matches collapsed sidebar width */
+}
 
 @media (max-width: 640.98px) {
     .top-row {
@@ -49,30 +62,6 @@ main {
 @media (min-width: 641px) {
     .page {
         flex-direction: row;
-    }
-
-    .sidebar {
-        width: 250px;
-        height: 100vh;
-        position: sticky;
-        top: 0;
-    }
-
-    .top-row {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-    .top-row.auth ::deep a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
-
-    .top-row, article {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
     }
 }
 
