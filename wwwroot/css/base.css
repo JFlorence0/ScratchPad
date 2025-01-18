@@ -1,8 +1,8 @@
 :root {
     --background-color: #292c2f;
     --custom-green: rgb(28, 139, 28);
-    --white: rgb(255, 255, 255);
-
+    --white: #D9D9D9;
+    --grey: grey;
     --primary-color: #007bff;
     --secondary-color: #6c757d;
     --success-color: #28a745;
@@ -17,7 +17,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
     color: var(--white);
 }
 
@@ -36,4 +35,5 @@ a, a:visited {
     font-size: 1rem;
     color: grey;
     margin-bottom: 1rem;
+    font-style: italic;
 }

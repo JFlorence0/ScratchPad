@@ -15,10 +15,7 @@
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.RazorAssemblyInfo.cache
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.RazorAssemblyInfo.cs
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.sourcelink.json
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/Components/Layout/MainLayout.razor.rz.scp.css
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/Components/Pages/InvestmentIdeas.razor.rz.scp.css
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/bundle/ScratchPad.styles.css
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/projectbundle/ScratchPad.bundle.scp.css
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/wm8hynp5bm-bqjiyaj88i.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/1k3xb96a72-c2jlpeoesf.gz
@@ -78,9 +75,7 @@
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.pdb
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.genruntimeconfig.cache
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ref/ScratchPad.dll
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/6j9e1gbn36-iz248irme1.gz
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/v6pbsw1l2k-iz248irme1.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0iw4w63g96-885gv4y346.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/o5qdwvu2hl-nn7y1lx9bi.gz
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/2ahjdeyz22-1fjv15iyc0.gz
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t1y82xdhop-ex8dm3y6wb.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t1y82xdhop-uzbpe9rin6.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/2ahjdeyz22-sonm0dd4ge.gz

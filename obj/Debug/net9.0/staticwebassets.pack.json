@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/projectbundle/ScratchPad.bundle.scp.css",
-      "PackagePath": "staticwebassets/ScratchPad.iz248irme1.bundle.scp.css"
-    },
-    {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Layout/MainLayout.css",
       "PackagePath": "staticwebassets/css/Layout/MainLayout.css"
     },
@@ -27,6 +23,30 @@
     {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/favicon.png",
       "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/book-icon.png",
+      "PackagePath": "staticwebassets/images/book-icon.png"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/home-icon.png",
+      "PackagePath": "staticwebassets/images/home-icon.png"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/lightbulb-icon.png",
+      "PackagePath": "staticwebassets/images/lightbulb-icon.png"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/list-icon.png",
+      "PackagePath": "staticwebassets/images/list-icon.png"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/stylus-icon.png",
+      "PackagePath": "staticwebassets/images/stylus-icon.png"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/trending-up-icon.png",
+      "PackagePath": "staticwebassets/images/trending-up-icon.png"
     },
     {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
