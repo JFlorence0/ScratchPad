@@ -128,16 +128,6 @@ main.collapsed {
     transition: margin-left 0.3s ease;
 }
 
-.page-body {
-    margin-top: 20px;
-    width: 100%;
-}
-
-.page-body-title {
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
 @media (max-width: 640.98px) {
 
 }

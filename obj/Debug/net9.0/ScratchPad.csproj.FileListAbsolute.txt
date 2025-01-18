@@ -17,11 +17,9 @@
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.sourcelink.json
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/scopedcss/bundle/ScratchPad.styles.css
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/0iw4w63g96-885gv4y346.gz
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t1y82xdhop-k0xuhcq686.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/o5qdwvu2hl-nn7y1lx9bi.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/fxp3nmqa3o-5ipweew5fc.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/txxt2hdvc5-5ipweew5fc.gz
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/wgrsfjlt12-ric58et7jz.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/wm8hynp5bm-bqjiyaj88i.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/1k3xb96a72-c2jlpeoesf.gz
@@ -81,5 +79,7 @@
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.pdb
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.genruntimeconfig.cache
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ref/ScratchPad.dll
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/2ahjdeyz22-jvyoc8jgam.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t5wk2hr7yh-b5h78gt5ws.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/2ahjdeyz22-aw0qfdsm14.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t1y82xdhop-bqz0nhht4x.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/wgrsfjlt12-abz26jvymz.gz

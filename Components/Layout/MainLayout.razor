@@ -104,7 +104,7 @@
     private string IsCollapsed => UIState.IsSidebarCollapsed ? "collapsed" : "expanded";
 
     // Variable that will be updated with the user's last selection, we will base the styling on it.
-    private string lastSelected => UIState.NavLinkSelection;
+    private string LastSelected => UIState.NavLinkSelection;
 
     // This runs when the page is initialized. It's similar to a useEffect hook
     // with an empty dependency array in React. Inside, we are adding an event listener
