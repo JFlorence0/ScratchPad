@@ -57,6 +57,10 @@
       "PackagePath": "staticwebassets/images/list-icon.png"
     },
     {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/lock-icon.png",
+      "PackagePath": "staticwebassets/images/lock-icon.png"
+    },
+    {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/stylus-icon.png",
       "PackagePath": "staticwebassets/images/stylus-icon.png"
     },

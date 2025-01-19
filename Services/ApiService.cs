@@ -70,4 +70,7 @@ public class UserActivitySummary
 
     [JsonPropertyName("monthly_active_users")]
     public int MonthlyActiveUsers { get; set; }
+
+    [JsonPropertyName("city_request_metrics")]
+    public Dictionary<string, int>? CityRequestMetrics { get; set; }
 }

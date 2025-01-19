@@ -28,18 +28,85 @@
             <div class="mm-active-users-container">
                 <div class="mm-active-user-metric-container">
                     <h4 class="mm-active-user-metric-title">Daily Active Users</h4>
-                    <span class="mm-active-user-metric-count">@dailyActiveUsers</span>
+                    @if (isLoading)
+                    {
+                        <div class="loader-container">
+                            <span class="loader"></span>
+                        </div>
+                    }
+                    else
+                    {
+                        <span class="mm-active-user-metric-count" aria-live="polite">
+                            @dailyActiveUsers
+                        </span>
+                    }
+
                 </div>
 
                 <div class="mm-active-user-metric-container">
                     <h4 class="mm-active-user-metric-title">Weekly Active Users</h4>
-                    <span class="mm-active-user-metric-count">@weeklyActiveUsers</span>
+                    @if (isLoading)
+                    {
+                        <div class="loader-container">
+                            <span class="loader"></span>
+                        </div>
+                    }
+                    else
+                    {
+                        <span class="mm-active-user-metric-count" aria-live="polite">
+                            @weeklyActiveUsers
+                        </span>
+                    }
+
                 </div>
 
                 <div class="mm-active-user-metric-container">
                     <h4 class="mm-active-user-metric-title">Monthly Active Users</h4>
-                    <span class="mm-active-user-metric-count">@monthlyActiveUsers</span>
+                    @if (isLoading)
+                    {
+                        <div class="loader-container">
+                            <span class="loader"></span>
+                        </div>
+                    }
+                    else
+                    {
+                        <span class="mm-active-user-metric-count" aria-live="polite">
+                            @monthlyActiveUsers
+                        </span>
+                    }
+
                 </div>
+
+                <div class="mm-active-user-metric-container">
+                    <h4 class="mm-active-user-metric-title">Total Users</h4>
+                    @if (isLoading)
+                    {
+                        <div class="loader-container">
+                            <span class="loader"></span>
+                        </div>
+                    }
+                    else
+                    {
+                        <span class="mm-active-user-metric-count" aria-live="polite">
+                            @totalUsers
+                        </span>
+                    }
+
+                </div>
+
+                <h4 class="mm-active-user-metric-title">City Request Fulfillment</h4>
+                @if (isLoading) {
+                    <span class="loader"></span>
+                }
+                else
+                {
+                    <ul>
+                        @foreach (var cityMetric in @cityRequestMetrics)
+                        {
+                            <li>@cityMetric.Key: @cityMetric.Value venues</li>
+                        }
+                    </ul>
+                }
             </div>
         </div>
     }
@@ -48,15 +115,19 @@
 @code {
     // State management
     private bool isJames = false;
+    // define isLoading variable
+    private bool isLoading = false;
 
     // Password fields
     private string enteredPassword = string.Empty;
-    private string correctPassword = "7evenCostanza";
+    private string correctPassword = "Basketba11";
 
     // User metrics
     private int dailyActiveUsers = 0;
     private int weeklyActiveUsers = 0;
     private int monthlyActiveUsers = 0;
+    private int totalUsers = 0;
+    private Dictionary<string, int> cityRequestMetrics = new Dictionary<string, int>();
 
     // Fetch data and check password
     protected override async Task OnInitializedAsync()
@@ -77,16 +148,22 @@
 
         try
         {
+            isLoading = true;
             var userMetrics = await ApiService.GetUserAnalyticsAsync();
 
             dailyActiveUsers = userMetrics.DailyActiveUsers;
             weeklyActiveUsers = userMetrics.WeeklyActiveUsers;
             monthlyActiveUsers = userMetrics.MonthlyActiveUsers;
+            totalUsers = userMetrics.TotalUsers;
+            cityRequestMetrics = userMetrics.CityRequestMetrics;
 
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error fetching user metrics: {ex.Message}");
+        }
+        finally {
+            isLoading = false;
         }
     }
 
