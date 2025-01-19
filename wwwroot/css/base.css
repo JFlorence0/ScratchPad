@@ -59,6 +59,10 @@ button {
     margin-bottom: 20px;
 }
 
+.page-body-section {
+    margin-bottom: 20px;
+}
+
 .page-overlay {
     z-index: 1;
     position: absolute;

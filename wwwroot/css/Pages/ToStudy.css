@@ -1,16 +1,3 @@
-.ts-courses-container-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    border: 1px solid blue;
-}
-
-.ts-course-container {
-    border: 1px solid red;
-    margin-top: 20px;
-    width: 350px;
-}
-
 .ts-course-title {
     font-weight: 500;
 }

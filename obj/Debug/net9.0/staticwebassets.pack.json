@@ -17,8 +17,8 @@
       "PackagePath": "staticwebassets/css/Pages/MobylMenu.css"
     },
     {
-      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Pages/ToDo.css",
-      "PackagePath": "staticwebassets/css/Pages/ToDo.css"
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Pages/SharedStyles.css",
+      "PackagePath": "staticwebassets/css/Pages/SharedStyles.css"
     },
     {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Pages/ToStudy.css",

@@ -1,55 +1,107 @@
 @page "/mobylmenu"
 
+@inject ApiService ApiService
+
 <PageTitle>MobylMenu Metrics</PageTitle>
+
 <div>
-    <!-- Popup if isJames is false, lookup how to do blzrs version conditionals in pages,
-    or do they just add classes to css?  -->
-    <div class="page-overlay">
-        <div class="page-overlay-content">
-            <h5 class="page-overlay-title">Are you James? <br />Enter the password</h5>
-            <input type="password" id="password" class="input-field password-input" @bind="enteredPassword" placeholder="Enter Password" />
-            <button type="submit" class="page-overlay-submit-button">Submit</button>
-        </div>
-    </div>
-    <h1 class="page-title">MobylMenu Metrics</h1>
-     <p class="page-subtitle">
-        Tracking MobylMenu activity.
-    </p>
-    <div class="page-body">
-        <h3 class="page-body-title">Active User Metrics</h3>
-
-        <div class="mm-active-users-container">
-
-            <!-- We already have this logic in the views of the project, just make it an api call to get the correct #s -->
-            <div class="mm-active-user-metric-container">
-                <h4 class="mm-active-user-metric-title">Daily Active Users</h4>
-                <span class="mm-active-user-metric-count">0</span>
+    @if (!isJames)
+    {
+        <div class="page-overlay">
+            <div class="page-overlay-content">
+                <h5 class="page-overlay-title">Are you James? <br />Enter the password</h5>
+                <input type="password" id="password" class="input-field password-input" 
+                       @bind="enteredPassword" 
+                       placeholder="Enter Password" />
+                <button type="submit" class="page-overlay-submit-button" @onclick="CheckPassword">Submit</button>
             </div>
-
-            <div class="mm-active-user-metric-container">
-                <h4 class="mm-active-user-metric-title">Weekly Active Users</h4>
-                <span class="mm-active-user-metric-count">0</span>
-            </div>
-
-            <div class="mm-active-user-metric-container">
-                <h4 class="mm-active-user-metric-title">Monthly Active Users</h4>
-                <span class="mm-active-user-metric-count">0</span>
-            </div>
-            
         </div>
+    }
+    else
+    {
+        <!-- Main Metrics Content -->
+        <h1 class="page-title">MobylMenu Metrics</h1>
+        <p class="page-subtitle">Tracking MobylMenu activity.</p>
+        <div class="page-body">
+            <h3 class="page-body-title">Active User Metrics</h3>
 
-        <div class="mm-user-request-fulfillment-container">
-            <!-- Write up api call to MM that gives us all the city requests that users have made
-            along with the number of venues we'venues added so far in that area. No need for venue 
-            requests since we return those almost immediately. -->
+            <div class="mm-active-users-container">
+                <div class="mm-active-user-metric-container">
+                    <h4 class="mm-active-user-metric-title">Daily Active Users</h4>
+                    <span class="mm-active-user-metric-count">@dailyActiveUsers</span>
+                </div>
 
+                <div class="mm-active-user-metric-container">
+                    <h4 class="mm-active-user-metric-title">Weekly Active Users</h4>
+                    <span class="mm-active-user-metric-count">@weeklyActiveUsers</span>
+                </div>
+
+                <div class="mm-active-user-metric-container">
+                    <h4 class="mm-active-user-metric-title">Monthly Active Users</h4>
+                    <span class="mm-active-user-metric-count">@monthlyActiveUsers</span>
+                </div>
+            </div>
         </div>
-    </div>
+    }
 </div>
 
 @code {
-    public bool isJames = false;
+    // State management
+    private bool isJames = false;
 
-    public string enteredPassword = string.Empty;
-    public string correctPassword = "7evenCostanza";
+    // Password fields
+    private string enteredPassword = string.Empty;
+    private string correctPassword = "7evenCostanza";
+
+    // User metrics
+    private int dailyActiveUsers = 0;
+    private int weeklyActiveUsers = 0;
+    private int monthlyActiveUsers = 0;
+
+    // Fetch data and check password
+    protected override async Task OnInitializedAsync()
+    {
+
+        if (isJames)
+        {
+            await FetchUserMetrics();
+        }
+        else
+        {
+            Console.WriteLine("isJames is false. User metrics will not be fetched.");
+        }
+    }
+
+    private async Task FetchUserMetrics()
+    {
+
+        try
+        {
+            var userMetrics = await ApiService.GetUserAnalyticsAsync();
+
+            dailyActiveUsers = userMetrics.DailyActiveUsers;
+            weeklyActiveUsers = userMetrics.WeeklyActiveUsers;
+            monthlyActiveUsers = userMetrics.MonthlyActiveUsers;
+
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching user metrics: {ex.Message}");
+        }
+    }
+
+    private async Task CheckPassword()
+    {
+
+        if (enteredPassword == correctPassword)
+        {
+            isJames = true;
+            enteredPassword = string.Empty; // Clear the password field
+            await FetchUserMetrics();
+        }
+        else
+        {
+            Console.WriteLine("Password is incorrect.");
+        }
+    }
 }

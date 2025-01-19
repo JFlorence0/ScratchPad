@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>bqz0nhht4x</Fingerprint>
-      <Integrity>HaCnR/6gTxbdFxhSuSFIQWAwXZyOTYi7ZoCVLmrHdoc=</Integrity>
+      <Fingerprint>1ruooa7ey3</Fingerprint>
+      <Integrity>rSEy73ZxZc4GNV/TLjZEwpvrjoH8iF/0aeQQ5Iid8gg=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\base.css'))</OriginalItemSpec>
@@ -108,23 +108,23 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Pages\MobylMenu.css'))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Pages\ToDo.css'))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Pages\SharedStyles.css'))">
       <SourceType>Package</SourceType>
       <SourceId>ScratchPad</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/ScratchPad</BasePath>
-      <RelativePath>css/Pages/ToDo.css</RelativePath>
+      <RelativePath>css/Pages/SharedStyles.css</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>5ipweew5fc</Fingerprint>
-      <Integrity>47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=</Integrity>
+      <Fingerprint>cogock8xu6</Fingerprint>
+      <Integrity>bIbeQSQnrtATCsitRpsYSAqDIWuD9e/0iZ/x9l/GMAE=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Pages\ToDo.css'))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Pages\SharedStyles.css'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Pages\ToStudy.css'))">
       <SourceType>Package</SourceType>
@@ -138,8 +138,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>abz26jvymz</Fingerprint>
-      <Integrity>RoF/TlthP+0VeSHAbBiXaYZ6LYeQ+nF5Acum/avrM3g=</Integrity>
+      <Fingerprint>sps3u5acru</Fingerprint>
+      <Integrity>4JnSZaf798TIPuvFfjncFGO+8vajC3432dWxv01XCyA=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Pages\ToStudy.css'))</OriginalItemSpec>
