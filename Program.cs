@@ -1,4 +1,6 @@
 using ScratchPad.Services;
+using Microsoft.EntityFrameworkCore;
+using ScratchPad.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,13 @@ builder.Services.AddHttpClient<ApiService>(client =>
 {
     client.BaseAddress = new Uri("https://www.mobylmenu.com/api/");
 });
+
+// Register DbContext with MySQL connection string
+builder.Services.AddDbContext<ScratchPadDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
+    ));
 
 var app = builder.Build();
 
