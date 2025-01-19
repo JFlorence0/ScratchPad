@@ -1,0 +1,23 @@
+# Ignore Visual Studio temporary files, build results, and
+# user-specific files
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore published outputs
+wwwroot/css/Pages/SharedStyles.css
+
+# Ignore temporary files
+*.gz
+*.log
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
