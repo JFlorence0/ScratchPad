@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ScratchPad.Models;
 
@@ -11,9 +12,11 @@ using ScratchPad.Models;
 namespace ScratchPad.Migrations
 {
     [DbContext(typeof(ScratchPadDbContext))]
-    partial class ScratchPadDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250120145540_AddInvestmentIdeaModel")]
+    partial class AddInvestmentIdeaModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
