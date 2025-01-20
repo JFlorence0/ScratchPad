@@ -1,46 +1,120 @@
+@using ScratchPad.Models
+@using Microsoft.EntityFrameworkCore;
+
 @page "/to-invest-in"
 
-<PageTitle>Things to invest it</PageTitle>
+<PageTitle>Things to invest in</PageTitle>
 
 <div>
-    <h1 class="page-title">Things to invest it</h1>
+    <h1 class="page-title">Things to invest in</h1>
     <p class="page-subtitle">
         Investment ideas & themes I'll be too early or too late for.
     </p>
     <div class="page-body">
-        <!-- Input Form -->
-        <h3>Add a New Investment Theme</h3>
-        <label>Theme Name:</label>
-        <input type="text" @bind="themeName" placeholder="Enter theme name" class="input-field" />
-        <br /><br />
-        <label>Why this theme works:</label>
-        <textarea @bind="themeDescription" placeholder="Enter description"></textarea>
-        <br /><br />
-        <button @onclick="AddTheme">Add Theme</button>
+        @if (showInvesmtentThemeForm)
+        {
+        <div class="page-overlay">
+            <div class="page-overlay-content poc-xl">
+                <button class="" @onclick="ToggleInvestmentThemeForm">Close</button>
+                    <h2 class="page-overlay-title">Add Investment Theme</h2>
+                    <div class="form-input-group">
+                    <label>Theme Name:</label>
+                    <input type="text" @bind="themeName" placeholder="Enter theme name" class="input-field" />
+                </div>
+                <br />
+                <div class="form-input-group">
+                    <label>Why this theme works:</label>
+                    <textarea @bind="themeDescription" placeholder="Enter description" class="textarea-field"></textarea>
+                </div>
+                <button class="page-overlay-close-button" @onclick="AddTheme">Add Theme</button>
+            </div>
 
-        <!-- Display Input -->
-        <h3>@displayedThemeName</h3>
-        <p>@displayedThemeDescription</p>
+        </div>
+            
+        }
+
+        <!-- Display Added Theme -->
+        <button type="submit" class="add-section-button" @onclick="ToggleInvestmentThemeForm">Add Investment Theme</button>
+        @if (investmentThemes != null && investmentThemes.Any())
+        {
+            <div class="page-body-section">
+                <div class="list-container">
+                    @foreach (var theme in investmentThemes)
+                    {
+                        <div class="list-item">
+                            <h4 class="list-item-name">@theme.Name</h4>
+                            <small class="list-date">@theme.CreatedDate.ToString("g")</small>
+                            <p class="list-item-descrition">@theme.Description</p>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+        else
+        {
+            <p>No themes have been added yet.</p>
+        }
     </div>
 </div>
 
 @code {
+    // This property defines an instance of ScratchPadDbContext, which is automatically 
+    // provided by Blazor's dependency injection system at runtime. The [Inject] attribute 
+    // tells Blazor to retrieve an instance of ScratchPadDbContext from the service container 
+    // (configured in Program.cs) and assign it to this property.
+    // The DbContext is used to interact with the database, allowing CRUD operations 
+    // such as querying, adding, updating, and deleting records.
+    [Inject] private ScratchPadDbContext DbContext { get; set; }
+    private bool showInvesmtentThemeForm = false;
+
     private string themeName = string.Empty;
     private string themeDescription = string.Empty;
 
-    private string displayedThemeName = "Electric Vehicles";
-    private string displayedThemeDescription = "Electric vehicles are the future of transportation. They are more efficient, cheaper to maintain, and better for the environment. Companies like Tesla, Nio, and Rivian are leading the charge in this space.";
+    private List<InvestmentTheme> investmentThemes = new();
 
-    private void AddTheme()
+
+    private async Task AddTheme()
     {
         if (!string.IsNullOrWhiteSpace(themeName) && !string.IsNullOrWhiteSpace(themeDescription))
         {
-            displayedThemeName = themeName;
-            displayedThemeDescription = themeDescription;
+            // Create a new InvestmentTheme object
+            var newTheme = new InvestmentTheme
+            {
+                Name = themeName,
+                Description = themeDescription,
+                CreatedDate = DateTime.Now
+            };
+
+            // Save the theme to the database
+            DbContext.InvestmentThemes.Add(newTheme);
+            await DbContext.SaveChangesAsync();
+
+            // Reload the themes
+            await LoadThemesAsync();
 
             // Clear inputs
             themeName = string.Empty;
             themeDescription = string.Empty;
+            ToggleInvestmentThemeForm();
         }
+    }
+
+    private async Task LoadThemesAsync()
+    {
+        // Load themes from the database and sort by CreatedDate
+        investmentThemes = await DbContext.InvestmentThemes
+            .OrderBy(t => t.CreatedDate)
+            .ToListAsync();
+    }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Load themes when the component initializes
+        await LoadThemesAsync();
+    }
+
+    public void ToggleInvestmentThemeForm()
+    {
+        showInvesmtentThemeForm = !showInvesmtentThemeForm;
     }
 }

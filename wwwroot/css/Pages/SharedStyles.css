@@ -10,3 +10,68 @@
     margin-top: 20px;
     width: 350px;
 }
+
+.horitontal-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+    max-width: 450px;
+}
+
+.form-input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-input-group label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-field, .textarea-field {
+    width: 250px;
+    border: 1px solid var(--dark-font-color);
+    border-radius: 10px;
+    padding: 5px 5px 5px 10px;
+    font-size: 1rem;
+    color: var(--dark-font-color);
+    outline: none;
+}
+
+.textarea-field {
+    height: 200px;
+}
+
+.input-field:focus, .textarea-field:focus {
+    box-shadow: 0 0 0 2px rgba(40, 40, 40, 0.2);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.list-item {
+    margin: 20px 0;
+}
+
+.list-item-name {
+    font-size: var(--large-font-size);
+    font-weight: 700;
+}
+
+.list-date {
+    font-size: var(--smaller-font-size);
+    color: grey;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+.list-item-descrition {
+    font-size: var(--regular-font-size);
+    margin: 10px 0;
+}
