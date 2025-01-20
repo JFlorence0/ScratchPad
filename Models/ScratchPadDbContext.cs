@@ -38,6 +38,6 @@ namespace ScratchPad.Models
 
         // Foreign key to link to InvestmentTheme
         public int InvestmentThemeId { get; set; }
-        public InvestmentTheme InvestmentTheme { get; set; }
+        public required InvestmentTheme InvestmentTheme { get; set; }
     }
 }
