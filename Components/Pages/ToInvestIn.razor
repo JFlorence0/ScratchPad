@@ -146,13 +146,13 @@
     private string ideaName = string.Empty;
     private string ideaTicker = "N/A";
     private string ideaDescription = string.Empty;
-    private InvestmentTheme selectedTheme;
-    private InvestmentIdea selectedIdea;
+    private InvestmentTheme? selectedTheme;
+    private InvestmentIdea? selectedIdea;
     private bool isEditing = false;
 
     private bool showDeleteConfirmation = false;
     private string deleteTargetType = string.Empty;
-    private object itemToDelete;
+    private object? itemToDelete;
 
     private async Task SaveTheme()
     {

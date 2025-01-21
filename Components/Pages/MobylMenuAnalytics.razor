@@ -1,6 +1,7 @@
 @page "/mobylmenu"
 
 @inject ApiService ApiService
+@inject UserStateService UserStateService
 
 <PageTitle>MobylMenu Metrics</PageTitle>
 
@@ -118,7 +119,9 @@
 
 @code {
     // State management
-    private bool isJames = false;
+     private UserState userState = new UserState();
+     private bool isJames => userState.IsJames;
+
     // define isLoading variable
     private bool isLoading = false;
 
@@ -133,17 +136,22 @@
     private int totalUsers = 0;
     private Dictionary<string, int> cityRequestMetrics = new Dictionary<string, int>();
 
-    // Fetch data and check password
+    // Blazor version of On component mount, runs once.
     protected override async Task OnInitializedAsync()
     {
-
-        if (isJames)
+        // Load user state from sessionStorage
+        var loadedUserState = await UserStateService.LoadUserStateAsync();
+        if (loadedUserState != null)
         {
-            await FetchUserMetrics();
-        }
-        else
-        {
-            Console.WriteLine("isJames is false. User metrics will not be fetched.");
+            userState = loadedUserState;
+            if (isJames)
+            {
+                await FetchUserMetrics();
+            }
+            else
+            {
+                Console.WriteLine("isJames is false. User metrics will not be fetched.");
+            }
         }
     }
 
@@ -173,11 +181,15 @@
 
     private async Task CheckPassword()
     {
-
         if (enteredPassword == correctPassword)
         {
-            isJames = true;
+            userState.IsJames = true;
+            userState.LastLogin = DateTime.Now; // Update last login timestamp
             enteredPassword = string.Empty; // Clear the password field
+
+            // Persist the user state to sessionStorage
+            await UserStateService.SaveUserStateAsync(userState);
+
             await FetchUserMetrics();
         }
         else

@@ -65,7 +65,6 @@
 .list-item-name-and-edit-container {
     display: flex;
     align-items: center;
-    border: 1px solid var(--pure-white);
 }
 
 .list-item-name {

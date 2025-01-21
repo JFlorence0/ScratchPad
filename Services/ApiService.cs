@@ -9,7 +9,7 @@ public class ApiService
     private readonly HttpClient _httpClient;
 
     // Define a private field to cache the user activity, so we dont have to fetch it every time
-    private UserActivitySummary _cachedUserActivity;
+    private UserActivitySummary? _cachedUserActivity;
 
     // Constructor, setting the HttpClient from the Program.cs
     public ApiService(HttpClient httpClient)
@@ -40,6 +40,10 @@ public class ApiService
             // Deserialize the response
             _cachedUserActivity = await response.Content.ReadFromJsonAsync<UserActivitySummary>();
 
+            if (_cachedUserActivity == null)
+            {
+                throw new InvalidOperationException("User analytics data is not initialized.");
+            }
             return _cachedUserActivity;
         }
         catch (Exception ex)

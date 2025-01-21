@@ -1,13 +1,15 @@
 .to-custom-link {
-    font-size: var(--smaller-font-size);
+    font-size: var(--smallest-font-size);
     cursor: pointer;
     margin-right: 10px;
+    font-weight: var(--bold);
+    color: var(--grey);
 }
 
-.tcl-edit {
+.tcl-edit:hover {
     color: var(--custom-blue);
 }
 
-.tcl-delete {
+.tcl-delete:hover {
     color: #C1251F;
 }

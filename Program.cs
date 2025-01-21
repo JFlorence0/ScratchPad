@@ -11,7 +11,12 @@ builder.Logging.AddConsole();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-builder.Services.AddSingleton<UIState>();
+/* The differences between AddSingleton and AddScoped are:
+AddScoped is created per user session
+AddSingleton means all users would share the same instance.
+This means I shouldnt use add singleton for UIState either*/
+builder.Services.AddScoped<UIState>();
+builder.Services.AddScoped<UserStateService>();
 
 // Register ApiService with HttpClient using the named client
 builder.Services.AddHttpClient<ApiService>(client =>

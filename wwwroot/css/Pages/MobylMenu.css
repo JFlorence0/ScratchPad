@@ -19,7 +19,7 @@
 }
 
 .mm-active-user-metric-title {
-    font-size: 1rem;
+    font-size: var(--large-font-size);
 }
 
 .mm-active-user-metric-count {
