@@ -10,30 +10,72 @@
     <p class="page-subtitle">
         Investment ideas & themes I'll be too early or too late for.
     </p>
+    <div class="horizontal-page-break"></div>
     <div class="page-body">
         @if (showInvesmtentThemeForm)
         {
         <div class="page-overlay">
             <div class="page-overlay-content poc-xl">
-                <button class="" @onclick="ToggleInvestmentThemeForm">Close</button>
-                    <h2 class="page-overlay-title">Add Investment Theme</h2>
+                    <button type="button" @onclick="ToggleInvestmentThemeForm" class="page-overlay-x-container">
+                        <img class="page-overlay-x-icon" src="images/x-close-icon.png"/>
+                    </button>
+                    <h2 class="page-overlay-title">@(isEditing ? "Edit Investment Theme" : "Add Investment Theme")</h2>
                     <div class="form-input-group">
-                    <label>Theme Name:</label>
-                    <input type="text" @bind="themeName" placeholder="Enter theme name" class="input-field" />
-                </div>
-                <br />
-                <div class="form-input-group">
-                    <label>Why this theme works:</label>
-                    <textarea @bind="themeDescription" placeholder="Enter description" class="textarea-field"></textarea>
-                </div>
-                <button class="page-overlay-close-button" @onclick="AddTheme">Add Theme</button>
+                        <label>Theme Name:</label>
+                        <input type="text" @bind="themeName" placeholder="Enter theme name" class="input-field" />
+                    </div>
+                    <div class="form-input-group">
+                        <label>Why this theme works:</label>
+                        <textarea @bind="themeDescription" placeholder="Enter description" class="textarea-field"></textarea>
+                    </div>
+                    <button class="page-overlay-submit-button" @onclick="SaveTheme">@(isEditing ? "Update Theme" : "Add Theme")</button>
             </div>
 
         </div>
             
         }
 
-        <!-- Display Added Theme -->
+        @if (showInvestmentIdeaForm)
+        {
+            <div class="page-overlay">
+                <div class="page-overlay-content poc-xl">
+                    <button type="button" @onclick="ToggleInvestmentIdeaForm" class="page-overlay-x-container">
+                        <img class="page-overlay-x-icon" src="images/x-close-icon.png"/>
+                    </button>
+                    <h2 class="page-overlay-title">Add an idea to @selectedTheme?.Name</h2>
+                    <div class="form-input-group">
+                        <label>Idea Name:</label>
+                        <input type="text" @bind="ideaName" placeholder="Enter idea name" class="input-field" />
+                    </div>
+                    <div class="form-input-group">
+                        <label>Ticker:</label>
+                        <input type="text" @bind="ideaTicker" placeholder="Enter ticker (optional)" class="input-field" />
+                    </div>
+                    <div class="form-input-group">
+                        <label>Why this idea works:</label>
+                        <textarea @bind="ideaDescription" placeholder="Enter description" class="textarea-field"></textarea>
+                    </div>
+                    <button class="page-overlay-submit-button" @onclick="SaveIdea">
+                        @(isEditing ? "Update Idea" : "Add Idea")
+                    </button>
+                </div>
+            </div>
+        }
+
+        @if (showDeleteConfirmation)
+        {
+            <div class="page-overlay">
+                <div class="page-overlay-content poc-xl">
+                    <h2 class="page-overlay-title">Confirm Deletion</h2>
+                    <p>Are you sure you want to delete this @deleteTargetType?</p>
+                    <p>This action cannot be undone.</p>
+                    <button class="page-overlay-submit-button" @onclick="DeleteItem">Confirm</button>
+                    <button class="page-overlay-close-button" @onclick="() => showDeleteConfirmation = false">Cancel</button>
+                </div>
+            </div>
+        }
+
+        <!-- Display Themes -->
         <button type="submit" class="add-section-button" @onclick="ToggleInvestmentThemeForm">Add Investment Theme</button>
         @if (investmentThemes != null && investmentThemes.Any())
         {
@@ -42,9 +84,38 @@
                     @foreach (var theme in investmentThemes)
                     {
                         <div class="list-item">
-                            <h4 class="list-item-name">@theme.Name</h4>
+                            <div class="list-item-name-and-edit-container">
+                                <h4 class="list-item-name">@theme.Name</h4>
+                                <a class="to-custom-link tcl-edit" @onclick="() => ShowThemeForm(theme)">Edit</a>
+                                <a class="to-custom-link tcl-delete" @onclick='() => ShowDeleteConfirmation("theme", theme)'>Delete</a>
+                            </div>
                             <small class="list-date">@theme.CreatedDate.ToString("g")</small>
                             <p class="list-item-descrition">@theme.Description</p>
+                            <button class="add-section-button" @onclick="() => ShowIdeaFormForTheme(theme.Id)">Add Idea</button>
+                            <!-- Investment Ideas -->
+                            @if (theme.InvestmentIdeas != null && theme.InvestmentIdeas.Any())
+                            {
+                                <div class="inner-list-container">
+                                    @foreach (var idea in theme.InvestmentIdeas)
+                                    {
+                                        <div class="inner-list-item">
+                                            <div class="list-item-name-and-edit-container">
+                                                <h5 class="list-item-name">@idea.Name (@idea.Ticker)</h5>
+                                                <a class="to-custom-link tcl-edit" @onclick="() => ShowIdeaFormForTheme(theme.Id, idea)">Edit</a>
+                                                <a class="to-custom-link tcl-delete" @onclick='() => ShowDeleteConfirmation("idea", idea)'>Delete</a>
+                                            </div>
+                                            <small class="list-date">Added: @idea.CreatedAt.ToString("g")</small>
+                                            <div class="inner-list-horizontal-page-break"></div>
+                                            <p class="list-item-descrition">@idea.Description</p>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            else
+                            {
+                                <p>No ideas have been added to this theme yet.</p>
+                            }
+
                         </div>
                     }
                 </div>
@@ -66,46 +137,145 @@
     // such as querying, adding, updating, and deleting records.
     [Inject] private ScratchPadDbContext DbContext { get; set; }
     private bool showInvesmtentThemeForm = false;
+    private bool showInvestmentIdeaForm = false;
 
     private string themeName = string.Empty;
     private string themeDescription = string.Empty;
-
     private List<InvestmentTheme> investmentThemes = new();
+    
+    private string ideaName = string.Empty;
+    private string ideaTicker = "N/A";
+    private string ideaDescription = string.Empty;
+    private InvestmentTheme selectedTheme;
+    private InvestmentIdea selectedIdea;
+    private bool isEditing = false;
 
+    private bool showDeleteConfirmation = false;
+    private string deleteTargetType = string.Empty;
+    private object itemToDelete;
 
-    private async Task AddTheme()
+    private async Task SaveTheme()
     {
         if (!string.IsNullOrWhiteSpace(themeName) && !string.IsNullOrWhiteSpace(themeDescription))
         {
-            // Create a new InvestmentTheme object
-            var newTheme = new InvestmentTheme
+            if (isEditing && selectedTheme != null)
             {
-                Name = themeName,
-                Description = themeDescription,
-                CreatedDate = DateTime.Now
-            };
+                // Update the existing theme
+                selectedTheme.Name = themeName;
+                selectedTheme.Description = themeDescription;
+                DbContext.InvestmentThemes.Update(selectedTheme);
+            }
+            else
+            {
+                // Add a new theme
+                var newTheme = new InvestmentTheme
+                {
+                    Name = themeName,
+                    Description = themeDescription,
+                    CreatedDate = DateTime.Now
+                };
+                DbContext.InvestmentThemes.Add(newTheme);
+            }
 
-            // Save the theme to the database
-            DbContext.InvestmentThemes.Add(newTheme);
             await DbContext.SaveChangesAsync();
 
-            // Reload the themes
-            await LoadThemesAsync();
-
-            // Clear inputs
+            // Reset the form
             themeName = string.Empty;
             themeDescription = string.Empty;
+            isEditing = false;
+            selectedTheme = null;
+
+            // Reload themes to reflect changes
+            await LoadThemesAsync();
             ToggleInvestmentThemeForm();
         }
     }
 
+
     private async Task LoadThemesAsync()
     {
-        // Load themes from the database and sort by CreatedDate
+        // Load themes from the database and include their related InvestmentIdeas
         investmentThemes = await DbContext.InvestmentThemes
-            .OrderBy(t => t.CreatedDate)
+            .Include(t => t.InvestmentIdeas) // Eagerly load related InvestmentIdeas
+            .OrderBy(t => t.CreatedDate)    // Sort themes by CreatedDate
             .ToListAsync();
     }
+
+    // Add a new idea
+    private async Task SaveIdea()
+    {
+        if (!string.IsNullOrWhiteSpace(ideaName) && !string.IsNullOrWhiteSpace(ideaDescription))
+        {
+            if (isEditing && selectedIdea != null)
+            {
+                // Update the existing idea
+                selectedIdea.Name = ideaName;
+                selectedIdea.Ticker = ideaTicker;
+                selectedIdea.Description = ideaDescription;
+                DbContext.InvestmentIdeas.Update(selectedIdea);
+            }
+            else
+            {
+                // Add a new idea
+                var newIdea = new InvestmentIdea
+                {
+                    Name = ideaName,
+                    Ticker = ideaTicker,
+                    Description = ideaDescription,
+                    CreatedAt = DateTime.Now,
+                    InvestmentThemeId = selectedTheme.Id,
+                    InvestmentTheme = selectedTheme
+                };
+                DbContext.InvestmentIdeas.Add(newIdea);
+            }
+
+            await DbContext.SaveChangesAsync();
+
+            // Reset form fields and close the overlay
+            ideaName = string.Empty;
+            ideaTicker = "N/A";
+            ideaDescription = string.Empty;
+            isEditing = false;
+            selectedIdea = null;
+            selectedTheme = null;
+
+            // Reload themes to reflect the changes
+            await LoadThemesAsync();
+            ToggleInvestmentIdeaForm();
+        }
+    }
+
+    private async Task DeleteItem()
+    {
+        if (itemToDelete != null)
+        {
+            if (itemToDelete is InvestmentTheme theme)
+            {
+                // Delete related ideas
+                var ideasToDelete = DbContext.InvestmentIdeas.Where(idea => idea.InvestmentThemeId == theme.Id);
+                DbContext.InvestmentIdeas.RemoveRange(ideasToDelete);
+
+                // Delete the theme
+                DbContext.InvestmentThemes.Remove(theme);
+            }
+            else if (itemToDelete is InvestmentIdea idea)
+            {
+                // Delete the idea
+                DbContext.InvestmentIdeas.Remove(idea);
+            }
+
+            await DbContext.SaveChangesAsync();
+
+            // Reload themes to update the UI
+            await LoadThemesAsync();
+
+            // Reset state
+            itemToDelete = null;
+            deleteTargetType = string.Empty;
+            showDeleteConfirmation = false;
+        }
+    }
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -117,4 +287,66 @@
     {
         showInvesmtentThemeForm = !showInvesmtentThemeForm;
     }
+
+    public void ToggleInvestmentIdeaForm()
+    {
+        showInvestmentIdeaForm = !showInvestmentIdeaForm;
+    }
+
+    private void ShowThemeForm(InvestmentTheme? theme = null)
+    {
+        if (theme != null)
+        {
+            // Prefill the form fields for editing
+            selectedTheme = theme;
+            themeName = theme.Name;
+            themeDescription = theme.Description;
+            isEditing = true; // Enable edit mode
+        }
+        else
+        {
+            // Reset the form fields for adding
+            selectedTheme = null;
+            themeName = string.Empty;
+            themeDescription = string.Empty;
+            isEditing = false; // Disable edit mode
+        }
+
+        showInvesmtentThemeForm = true; // Show the form
+    }
+
+    private void ShowIdeaFormForTheme(int themeId, InvestmentIdea? idea = null)
+    {
+        // Set the selected theme and idea
+        selectedTheme = investmentThemes.FirstOrDefault(t => t.Id == themeId);
+        selectedIdea = idea;
+
+        if (idea != null)
+        {
+            // Prefill the form fields for editing
+            ideaName = idea.Name;
+            ideaTicker = idea.Ticker;
+            ideaDescription = idea.Description;
+            isEditing = true; // Enable edit mode
+        }
+        else
+        {
+            // Reset the form fields for adding a new idea
+            ideaName = string.Empty;
+            ideaTicker = "N/A";
+            ideaDescription = string.Empty;
+            isEditing = false; // Disable edit mode
+        }
+
+        showInvestmentIdeaForm = true; // Show the form
+    }
+
+    private void ShowDeleteConfirmation(string targetType, object item)
+    {
+        deleteTargetType = targetType;
+        itemToDelete = item;
+        showDeleteConfirmation = true;
+    }
+
+
 }

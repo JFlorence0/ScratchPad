@@ -23,6 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 20px;
 }
 
 .form-input-group label {
@@ -32,13 +33,14 @@
 }
 
 .input-field, .textarea-field {
-    width: 250px;
+    width: 300px;
     border: 1px solid var(--dark-font-color);
     border-radius: 10px;
     padding: 5px 5px 5px 10px;
     font-size: 1rem;
-    color: var(--dark-font-color);
+    color: var(--pure-white);
     outline: none;
+    background-color: var(--background-offset-color);
 }
 
 .textarea-field {
@@ -56,12 +58,20 @@
 }
 
 .list-item {
-    margin: 20px 0;
+    margin: 0 0 20px 0;
+    width: 80%;
+}
+
+.list-item-name-and-edit-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--pure-white);
 }
 
 .list-item-name {
     font-size: var(--large-font-size);
     font-weight: 700;
+    margin-right: 10px;
 }
 
 .list-date {
@@ -74,4 +84,15 @@
 .list-item-descrition {
     font-size: var(--regular-font-size);
     margin: 10px 0;
+}
+
+.inner-list-container {
+    margin-left: 20px;
+}
+
+.inner-list-horizontal-page-break {
+    height: 1px;
+    width: 100px;
+    background-color: rgb(70, 70, 70);
+    margin: 20px 0;
 }

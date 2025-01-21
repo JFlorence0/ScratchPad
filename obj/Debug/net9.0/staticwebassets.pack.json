@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets/css/Pages/SharedStyles.css"
     },
     {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Pages/ToInvest.css",
+      "PackagePath": "staticwebassets/css/Pages/ToInvest.css"
+    },
+    {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/css/Pages/ToStudy.css",
       "PackagePath": "staticwebassets/css/Pages/ToStudy.css"
     },
@@ -67,6 +71,10 @@
     {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/trending-up-icon.png",
       "PackagePath": "staticwebassets/images/trending-up-icon.png"
+    },
+    {
+      "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/images/x-close-icon.png",
+      "PackagePath": "staticwebassets/images/x-close-icon.png"
     },
     {
       "Id": "/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",

@@ -22,91 +22,95 @@
         <!-- Main Metrics Content -->
         <h1 class="page-title">MobylMenu Metrics</h1>
         <p class="page-subtitle">Tracking MobylMenu activity.</p>
+        <div class="horizontal-page-break"></div>
+
         <div class="page-body">
             <h3 class="page-body-title">Active User Metrics</h3>
-
-            <div class="mm-active-users-container">
-                <div class="mm-active-user-metric-container">
-                    <h4 class="mm-active-user-metric-title">Daily Active Users</h4>
-                    @if (isLoading)
-                    {
-                        <div class="loader-container">
-                            <span class="loader"></span>
-                        </div>
-                    }
-                    else
-                    {
-                        <span class="mm-active-user-metric-count" aria-live="polite">
-                            @dailyActiveUsers
-                        </span>
-                    }
-
-                </div>
-
-                <div class="mm-active-user-metric-container">
-                    <h4 class="mm-active-user-metric-title">Weekly Active Users</h4>
-                    @if (isLoading)
-                    {
-                        <div class="loader-container">
-                            <span class="loader"></span>
-                        </div>
-                    }
-                    else
-                    {
-                        <span class="mm-active-user-metric-count" aria-live="polite">
-                            @weeklyActiveUsers
-                        </span>
-                    }
-
-                </div>
-
-                <div class="mm-active-user-metric-container">
-                    <h4 class="mm-active-user-metric-title">Monthly Active Users</h4>
-                    @if (isLoading)
-                    {
-                        <div class="loader-container">
-                            <span class="loader"></span>
-                        </div>
-                    }
-                    else
-                    {
-                        <span class="mm-active-user-metric-count" aria-live="polite">
-                            @monthlyActiveUsers
-                        </span>
-                    }
-
-                </div>
-
-                <div class="mm-active-user-metric-container">
-                    <h4 class="mm-active-user-metric-title">Total Users</h4>
-                    @if (isLoading)
-                    {
-                        <div class="loader-container">
-                            <span class="loader"></span>
-                        </div>
-                    }
-                    else
-                    {
-                        <span class="mm-active-user-metric-count" aria-live="polite">
-                            @totalUsers
-                        </span>
-                    }
-
-                </div>
-
-                <h4 class="mm-active-user-metric-title">City Request Fulfillment</h4>
-                @if (isLoading) {
-                    <span class="loader"></span>
-                }
-                else
-                {
-                    <ul>
-                        @foreach (var cityMetric in @cityRequestMetrics)
+            <div class="page-body-section">
+                <div class="mm-active-users-container">
+                    <div class="mm-active-user-metric-container">
+                        <h4 class="mm-active-user-metric-title">DAUs</h4>
+                        @if (isLoading)
                         {
-                            <li>@cityMetric.Key: @cityMetric.Value venues</li>
+                            <div class="loader-container">
+                                <span class="loader"></span>
+                            </div>
                         }
-                    </ul>
-                }
+                        else
+                        {
+                            <span class="mm-active-user-metric-count" aria-live="polite">
+                                @dailyActiveUsers
+                            </span>
+                        }
+
+                    </div>
+
+                    <div class="mm-active-user-metric-container">
+                        <h4 class="mm-active-user-metric-title">WAUs</h4>
+                        @if (isLoading)
+                        {
+                            <div class="loader-container">
+                                <span class="loader"></span>
+                            </div>
+                        }
+                        else
+                        {
+                            <span class="mm-active-user-metric-count" aria-live="polite">
+                                @weeklyActiveUsers
+                            </span>
+                        }
+
+                    </div>
+
+                    <div class="mm-active-user-metric-container">
+                        <h4 class="mm-active-user-metric-title">MAUs</h4>
+                        @if (isLoading)
+                        {
+                            <div class="loader-container">
+                                <span class="loader"></span>
+                            </div>
+                        }
+                        else
+                        {
+                            <span class="mm-active-user-metric-count" aria-live="polite">
+                                @monthlyActiveUsers
+                            </span>
+                        }
+
+                    </div>
+
+                    <div class="mm-active-user-metric-container">
+                        <h4 class="mm-active-user-metric-title">Total Users</h4>
+                        @if (isLoading)
+                        {
+                            <div class="loader-container">
+                                <span class="loader"></span>
+                            </div>
+                        }
+                        else
+                        {
+                            <span class="mm-active-user-metric-count" aria-live="polite">
+                                @totalUsers
+                            </span>
+                        }
+
+                    </div>
+                </div>
+                <div>
+                    <h4 class="mm-active-user-metric-title">City Request Fulfillment</h4>
+                    @if (isLoading) {
+                        <span class="loader"></span>
+                    }
+                    else
+                    {
+                        <ul>
+                            @foreach (var cityMetric in @cityRequestMetrics)
+                            {
+                                <li>@cityMetric.Key: @cityMetric.Value venues</li>
+                            }
+                        </ul>
+                    }
+                </div>
             </div>
         </div>
     }

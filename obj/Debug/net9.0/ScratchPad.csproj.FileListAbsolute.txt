@@ -155,7 +155,6 @@
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/2ahjdeyz22-aw0qfdsm14.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/o5qdwvu2hl-nn7y1lx9bi.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/fxp3nmqa3o-5ipweew5fc.gz
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t5wk2hr7yh-6rwqpa3axn.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/wgrsfjlt12-sps3u5acru.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/ly56lk3r6b-n3gwblojdi.gz
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/wm8hynp5bm-bqjiyaj88i.gz
@@ -217,5 +216,7 @@
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.pdb
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ScratchPad.genruntimeconfig.cache
 /Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/ref/ScratchPad.dll
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t1y82xdhop-ih6uvxoqm8.gz
-/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/plxmjykf4m-4kbglpxgoc.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t5wk2hr7yh-tteocbfi23.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/t1y82xdhop-xb68mn2ld5.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/plxmjykf4m-2ppg6xnukd.gz
+/Users/jimmyfl0/Desktop/Dev/C#/ScratchPad/obj/Debug/net9.0/compressed/fuxq5gsob3-rn261b5r8y.gz

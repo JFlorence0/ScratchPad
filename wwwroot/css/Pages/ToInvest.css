@@ -1,0 +1,13 @@
+.to-custom-link {
+    font-size: var(--smaller-font-size);
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.tcl-edit {
+    color: var(--custom-blue);
+}
+
+.tcl-delete {
+    color: #C1251F;
+}
