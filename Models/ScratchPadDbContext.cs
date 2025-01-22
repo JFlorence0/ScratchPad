@@ -13,6 +13,7 @@ namespace ScratchPad.Models
         public DbSet<InvestmentTheme> InvestmentThemes { get; set; }
 
         public DbSet<InvestmentIdea> InvestmentIdeas { get; set; }
+        public DbSet<Course> Courses { get; set; }
         
     }
 
@@ -49,7 +50,7 @@ namespace ScratchPad.Models
         public required string CourseProvider { get; set; }
 
         // Using datetime over string for sorting.
-        public DateTime DateCompleted { get; private set; }
+        public DateTime DateCompleted { get; set; }
 
         public bool Completed { get; set; } = false;
 

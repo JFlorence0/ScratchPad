@@ -5,7 +5,7 @@
 namespace ScratchPad.Migrations
 {
     /// <inheritdoc />
-    public partial class AddCourseModel : Migration
+    public partial class AddCourseModelAndDbSet : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

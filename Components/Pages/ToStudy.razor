@@ -1,68 +1,176 @@
 @page "/to-study"
 
+@using ScratchPad.Models;
+@using Microsoft.EntityFrameworkCore;
+
 <PageTitle>To Study</PageTitle>
+
 <div>
     <h1 class="page-title">Things to study</h1>
-     <p class="page-subtitle">
+    <p class="page-subtitle">
         Making the best out of my Codecademy subscription.
     </p>
     <div class="horizontal-page-break"></div>
 
     <div class="page-body">
-        <div class="page-body-section">
-
-            <h3 class="page-body-title">Courses to take/in progress</h3>
-
-            <div class="flex-container-wrap">
-
-                <div class="flex-container-wrap-item-container">
-                    <h4 class="ts-course-title">Learn Intermediate Java (Codecademy)</h4>
-                    <p class="ts-course-subtitle">In progress</p>
+        @if (showCourseForm)
+        {
+        <div class="page-overlay">
+            <div class="page-overlay-content poc-xl">
+                <button type="button" @onclick="ToggleCourseForm" class="page-overlay-x-container">
+                    <img class="page-overlay-x-icon" src="images/x-close-icon.png"/>
+                </button>
+                <h2 class="page-overlay-title">@(isEditing ? "Edit Course" : "Add Course")</h2>
+                <div class="form-input-group">
+                    <label>Course Name:</label>
+                    <input type="text" @bind="courseName" placeholder="Enter the course name" class="input-field" />
                 </div>
-
-                <div class="flex-container-wrap-item-container">
-                    <h4 class="ts-course-title">Java/Spring</h4>
-                    <p class="ts-course-subtitle">TBD</p>
+                <div class="form-input-group">
+                    <label>Courses Provider:</label>
+                    <textarea @bind="courseProvider" placeholder="Who offered the course?" class="textarea-field"></textarea>
                 </div>
-
+                <button class="page-overlay-submit-button" @onclick="SaveCourse">@(isEditing ? "Update Course" : "Add Course")</button>
             </div>
 
-        </div>
-
-        <div class="page-body-section">
-
-            <h3 class="page-body-title">Completed courses</h3>
-
-            <div class="flex-container-wrap">
-
-                <div class="flex-container-wrap-item-container">
-                    <h4 class="ts-course-title">Learn HTML (Codecademy)</h4>
-                    <p class="ts-course-subtitle">11/21/2022</p>
+        </div>            
+        }
+        @if (isLoading)
+        {
+            <p>Loading courses...</p>
+        }
+        else
+        {
+            <div class="page-body-section">
+                <button type="submit" class="add-section-button" @onclick="ToggleCourseForm">Add a course</button>
+                <h3 class="page-body-title">Courses to take/in progress</h3>
+                <div class="flex-container-wrap">
+                    @if (!courses.Any(c => !c.Completed))
+                    {
+                        <p>No courses in progress.</p>
+                    }
+                    else
+                    {
+                        @foreach (var course in courses.Where(c => !c.Completed))
+                        {
+                            <div class="flex-container-wrap-item-container">
+                                <h4 class="ts-course-title">@course.Name</h4>
+                                <p class="ts-course-subtitle">In progress</p>
+                            </div>
+                        }
+                    }
                 </div>
-
-                <div class="flex-container-wrap-item-container">
-                    <h4 class="ts-course-title">Learn CSS (Codecademy)</h4>
-                    <p class="ts-course-subtitle">12/21/2022</p>
-                </div>
-
-                <div class="flex-container-wrap-item-container">
-                    <h4 class="ts-course-title">Data Science: Machine Learning Specialist (Codecademy)</h4>
-                    <p class="ts-course-subtitle">12/21/2023</p>
-                    <button class="ts-action-button">Subjects</button>
-                </div>
-
-                <div class="flex-container-wrap-item-container">
-                    <h4 class="ts-course-title">Tensorflow (Codecademy)</h4>
-                    <p class="ts-course-subtitle">9/21/2024</p>
-                </div>
-
-                <div class="flex-container-wrap-item-container">
-                    <h4 class="ts-course-title">Learn C# (Codecademy)</h4>
-                    <p class="ts-course-subtitle">12/10/2024</p>
-                </div>
-
             </div>
 
-        </div>
+            <div class="page-body-section">
+
+                <h3 class="page-body-title">Completed courses</h3>
+                <div class="flex-container-wrap">
+                    @if (!courses.Any(c => c.Completed))
+                    {
+                        <p>No completed courses.</p>
+                    }
+                    else
+                    {
+                        @foreach (var course in courses.Where(c => c.Completed))
+                        {
+                            <div class="flex-container-wrap-item-container">
+                                <h4 class="ts-course-title">@course.Name</h4>
+                                <p class="ts-course-subtitle">@course.DateCompleted.ToString("MM/dd/yyyy")</p>
+                                @if (course.Name == "Data Science: Machine Learning")
+                                {
+                                    <button class="ts-action-button">Subjects</button>
+                                }
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        }
     </div>
 </div>
+
+@code {
+    [Inject] private ScratchPadDbContext DbContext { get; set; }
+    public bool showCourseForm = false;
+    public List<Course> courses = new();
+    private string courseName = string.Empty;
+    private string courseProvider = string.Empty;
+    private bool courseCompleted = false;
+    public bool isLoading = true;
+    public bool isEditing =false;
+    public  Course? selectedCourse;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Simulate data fetching from the database
+            courses = await LoadCoursesAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error fetching courses: {ex.Message}");
+            // Optionally, show an error message to the user
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private async Task SaveCourse()
+    {
+        if (!string.IsNullOrWhiteSpace(courseName) && !string.IsNullOrWhiteSpace(courseProvider))
+        {
+            if (isEditing && selectedCourse != null)
+            {
+                // Update the existing theme
+                selectedCourse.Name = courseName;
+                selectedCourse.CourseProvider = courseProvider;
+                DbContext.Courses.Update(selectedCourse);
+            }
+            else
+            {
+                // Add a new theme
+                var newCourse = new Course
+                {
+                    Name = courseName,
+                    CourseProvider = courseProvider,
+                    Completed = courseCompleted,
+                    DateCompleted = DateTime.Now
+                };
+                DbContext.Courses.Add(newCourse);
+            }
+
+            await DbContext.SaveChangesAsync();
+
+            // Reset the form
+            courseName = string.Empty;
+            courseProvider = string.Empty;
+            courseCompleted = false;
+            isEditing = false;
+            selectedCourse = null;
+
+            // Reload themes to reflect changes
+            await LoadCoursesAsync();
+            ToggleCourseForm();
+        }
+    }
+
+
+    // Simulated database fetch
+    private async Task<List<Course>> LoadCoursesAsync()
+    {
+        // Load courses
+        courses = await DbContext.Courses
+            .OrderBy(t => t.DateCompleted)
+            .ToListAsync();
+
+        return courses;
+    }
+
+    public void ToggleCourseForm() {
+        showCourseForm = !showCourseForm;
+    }
+}
+
