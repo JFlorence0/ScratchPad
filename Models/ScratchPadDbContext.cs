@@ -1,3 +1,4 @@
+using System.Globalization;
 using Microsoft.EntityFrameworkCore;
 
 namespace ScratchPad.Models
@@ -40,4 +41,30 @@ namespace ScratchPad.Models
         public int InvestmentThemeId { get; set; }
         public required InvestmentTheme InvestmentTheme { get; set; }
     }
+
+    public class Course
+    {
+        public int Id { get; set; }
+        public required string Name { get; set; }
+        public required string CourseProvider { get; set; }
+
+        // Using datetime over string for sorting.
+        public DateTime DateCompleted { get; private set; }
+
+        public bool Completed { get; set; } = false;
+
+        // Let myself provide a date or auto generate one
+        public void MarkAsCompleted(DateTime? completedDate = null)
+        {
+            if (completedDate == null)
+            {
+                throw new ArgumentException("A completion date must be provided for past courses.");
+            }
+
+            Completed = true;
+            DateCompleted = completedDate.Value;
+        }
+    }
+
+    
 }

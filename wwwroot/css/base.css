@@ -7,6 +7,10 @@
     --custom-green-focus: rgb(36, 149, 36);
     --custom-blue: rgb(63, 110, 211);
     --custom-blue-focus: rgb(33, 95, 229);
+    --custom-dull-red: #c54f5a;
+    --custom-dull-orange: #d18120;
+    --custom-dull-yellow: #c1a244;
+    --custom-dull-blue: rgb(59, 88, 151);
     --pure-white: #FFFFFF;
     --white: #D9D9D9;
     --grey: grey;

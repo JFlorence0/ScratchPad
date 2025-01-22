@@ -30,8 +30,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>m4pvq48jq8</Fingerprint>
-      <Integrity>CkWzBr0raqCxbwNbXA9KIiTjC3RVHw7FVKxUnFSoBrg=</Integrity>
+      <Fingerprint>sw258qzjxk</Fingerprint>
+      <Integrity>BMKrG4mXYZrH1g25x3SRgz6U3SMqfwkYby8jJFWyc3A=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\base.css'))</OriginalItemSpec>
@@ -102,8 +102,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>lheih3eiqm</Fingerprint>
-      <Integrity>2RY2zfZVZstpcTLPbAUm5/DqtJ/0or1LJW3FuKymmZw=</Integrity>
+      <Fingerprint>eutasnq0qw</Fingerprint>
+      <Integrity>lq07gfSY4wt1fMHeiTsQftksnnDd1gJ1n+vdNECexdU=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Pages\MobylMenu.css'))</OriginalItemSpec>
