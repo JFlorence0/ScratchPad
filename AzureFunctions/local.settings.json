@@ -1,0 +1,10 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "Functions:Worker:HostEndpoint": "http://127.0.0.1:9091"
+  },
+  "ConnectionStrings": {
+    "MYSQL_CONNECTION_STRING": "Server=localhost;Port=3306;Database=scratchpad;User=jimmyfl0;Password=Ba$ketba11;"
+  }
+}

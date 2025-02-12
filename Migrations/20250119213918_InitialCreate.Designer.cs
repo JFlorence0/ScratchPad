@@ -23,8 +23,6 @@ namespace ScratchPad.Migrations
                 .HasAnnotation("ProductVersion", "9.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
-
             modelBuilder.Entity("ScratchPad.Models.InvestmentTheme", b =>
                 {
                     b.Property<int>("Id")

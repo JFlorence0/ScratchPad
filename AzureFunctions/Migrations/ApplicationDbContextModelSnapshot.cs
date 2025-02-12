@@ -3,27 +3,26 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ScratchPad.Models;
+using http.context;
 
 #nullable disable
 
-namespace ScratchPad.Migrations
+namespace http.Migrations
 {
-    [DbContext(typeof(ScratchPadDbContext))]
-    [Migration("20250122173256_AddCourseModelAndDbSet")]
-    partial class AddCourseModelAndDbSet
+    [DbContext(typeof(ApplicationDbContext))]
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("ScratchPad.Models.Course", b =>
+            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+
+            modelBuilder.Entity("http.Models.Course", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,21 +35,23 @@ namespace ScratchPad.Migrations
 
                     b.Property<string>("CourseProvider")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<DateTime>("DateCompleted")
+                    b.Property<DateTime?>("DateCompleted")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Courses");
+                    b.ToTable("courses", (string)null);
                 });
 
-            modelBuilder.Entity("ScratchPad.Models.InvestmentIdea", b =>
+            modelBuilder.Entity("http.Models.InvestmentIdea", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -63,27 +64,30 @@ namespace ScratchPad.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(1000)
+                        .HasColumnType("varchar(1000)");
 
                     b.Property<int>("InvestmentThemeId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
 
                     b.Property<string>("Ticker")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("InvestmentThemeId");
 
-                    b.ToTable("InvestmentIdeas");
+                    b.ToTable("investment_ideas", (string)null);
                 });
 
-            modelBuilder.Entity("ScratchPad.Models.InvestmentTheme", b =>
+            modelBuilder.Entity("http.Models.InvestmentTheme", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,20 +100,22 @@ namespace ScratchPad.Migrations
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(500)
+                        .HasColumnType("varchar(500)");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(255)
+                        .HasColumnType("varchar(255)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("InvestmentThemes");
+                    b.ToTable("investment_themes", (string)null);
                 });
 
-            modelBuilder.Entity("ScratchPad.Models.InvestmentIdea", b =>
+            modelBuilder.Entity("http.Models.InvestmentIdea", b =>
                 {
-                    b.HasOne("ScratchPad.Models.InvestmentTheme", "InvestmentTheme")
+                    b.HasOne("http.Models.InvestmentTheme", "InvestmentTheme")
                         .WithMany("InvestmentIdeas")
                         .HasForeignKey("InvestmentThemeId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -118,7 +124,7 @@ namespace ScratchPad.Migrations
                     b.Navigation("InvestmentTheme");
                 });
 
-            modelBuilder.Entity("ScratchPad.Models.InvestmentTheme", b =>
+            modelBuilder.Entity("http.Models.InvestmentTheme", b =>
                 {
                     b.Navigation("InvestmentIdeas");
                 });
