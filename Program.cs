@@ -71,8 +71,19 @@ var app = builder.Build();
 // Middleware & Routing
 app.UseStaticFiles();
 app.UseRouting();
+app.MapRazorPages();
 app.MapBlazorHub();
 app.MapFallbackToPage("/_Host");
+
+var env = app.Services.GetRequiredService<IWebHostEnvironment>();
+Console.WriteLine($"Content Root Path: {env.ContentRootPath}");
+Console.WriteLine($"Web Root Path: {env.WebRootPath}");
+
+var hostPage = Path.Combine(Directory.GetCurrentDirectory(), "Pages", "_Host.cshtml");
+Console.WriteLine($"Looking for _Host.cshtml at: {hostPage}");
+Console.WriteLine($"File exists: {File.Exists(hostPage)}");
+
+
 
 // Start the application
 app.Run();
