@@ -1,24 +1,24 @@
-using System.Data;
-using System.Threading.Tasks;
-using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using http.context;
-using MySqlConnector;
-using System.Collections.Generic;
-using System.Net;
+using System.Collections.Generic;               // For List<T> and IAsyncEnumerable<T>
+using System.Threading.Tasks;                   // For async Task methods
+using Microsoft.Azure.Functions.Worker;         // For Function and FunctionContext
+using Microsoft.Azure.Functions.Worker.Http;    // For HttpRequestData and HttpResponseData
+using Microsoft.Extensions.Logging;             // For logging support
+using ScratchPad.Models;                        // Contains InvestmentIdea and InvestmentTheme models
+using ScratchPad.AzureFunctions.Repositories;                                // Contains IInvestmentIdeaRepository and its implementation
+using System.Net;                               // For HttpStatusCode
 
-namespace http.Functions
+namespace ScratchPad.AzureFunctions.Functions
 {
     public class InvestmentIdeaFunction
     {
-        private readonly ApplicationDbContext _context;
+        // Dependency-inject the repository and logger.
+        private readonly IInvestmentIdeaRepository _repository;
         private readonly ILogger<InvestmentIdeaFunction> _logger;
 
-        public InvestmentIdeaFunction(ApplicationDbContext context, ILogger<InvestmentIdeaFunction> logger)
+        // The constructor receives the repository and logger from DI.
+        public InvestmentIdeaFunction(IInvestmentIdeaRepository repository, ILogger<InvestmentIdeaFunction> logger)
         {
-            _context = context;
+            _repository = repository;
             _logger = logger;
         }
 
@@ -29,54 +29,21 @@ namespace http.Functions
         {
             _logger.LogInformation("Fetching all investment ideas with their themes...");
 
-            var connectionString = _context.Database.GetConnectionString();
-            await using var connection = new MySqlConnection(connectionString);
-            await connection.OpenAsync();
+            // Create a list to collect investment ideas streamed from the repository.
+            var ideas = new List<InvestmentIdea>();
 
-            var sql = """
-                SELECT 
-                    i.Id AS InvestmentId, 
-                    i.Name AS InvestmentName, 
-                    i.Ticker, 
-                    i.Description AS InvestmentDescription, 
-                    i.CreatedAt AS InvestmentCreatedAt, 
-                    t.Id AS ThemeId,
-                    t.Name AS ThemeName, 
-                    t.Description AS ThemeDescription, 
-                    t.CreatedDate AS ThemeCreatedDate
-                FROM investmentideas i
-                JOIN investmentthemes t ON i.InvestmentThemeId = t.Id;
-            """;
-
-            await using var command = new MySqlCommand(sql, connection);
-            await using var reader = await command.ExecuteReaderAsync();
-
-            var ideas = new List<object>();
-
-            while (await reader.ReadAsync())
+            // Asynchronously stream each InvestmentIdea using IAsyncEnumerable.
+            await foreach (var idea in _repository.GetInvestmentIdeasAsync())
             {
-                var investmentIdea = new
-                {
-                    Id = reader.GetInt32("InvestmentId"),
-                    Name = reader.GetString("InvestmentName"),
-                    Ticker = reader.GetString("Ticker"),
-                    Description = reader.GetString("InvestmentDescription"),
-                    CreatedAt = reader.GetDateTime("InvestmentCreatedAt"),
-                    InvestmentTheme = new
-                    {
-                        Id = reader.GetInt32("ThemeId"),
-                        Name = reader.GetString("ThemeName"),
-                        Description = reader.GetString("ThemeDescription"),
-                        CreatedDate = reader.GetDateTime("ThemeCreatedDate")
-                    }
-                };
-
-                ideas.Add(investmentIdea);
+                ideas.Add(idea);
             }
 
-            // Create the HTTP response using the isolated worker pattern.
+            // Create the HTTP response with a status code of 200 (OK).
             var response = req.CreateResponse(HttpStatusCode.OK);
+
+            // Write the list of ideas as JSON in the response.
             await response.WriteAsJsonAsync(ideas);
+
             return response;
         }
     }

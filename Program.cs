@@ -9,7 +9,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using ScratchPad.Services;
 using ScratchPad.Models;
-using http.context;
+using ScratchPad.AzureFunctions.Repositories;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -45,6 +45,19 @@ builder.Services.AddDbContext<ScratchPadDbContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection"),
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
     ));
+
+// ✅ Register IInvestmentIdeaRepository so that DI can resolve it.
+//     This registration creates a singleton instance using the connection string from configuration.
+builder.Services.AddSingleton<IInvestmentIdeaRepository>(sp =>
+{
+    var configuration = sp.GetRequiredService<IConfiguration>();
+    var connectionString = configuration.GetConnectionString("DefaultConnection");
+    if (string.IsNullOrEmpty(connectionString))
+    {
+        throw new InvalidOperationException("Connection string 'DefaultConnection' is not configured.");
+    }
+    return new InvestmentIdeaRepository(connectionString);
+});
 
 // ✅ Register Azure Functions Worker (Allows Functions to Use the Same DI)
 builder.Host.ConfigureFunctionsWorkerDefaults();
